@@ -1,5 +1,3 @@
-const { task } = require("grunt");
-
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -14,7 +12,7 @@ module.exports = function(grunt) {
                     compress: true,
                 },
                 files: {
-                    'dist/styles/main.min.css' : 'src/styles/main.less'
+                    'dist/styles/main.min.css': 'src/styles/main.less'
                 }
             }
         },
@@ -44,7 +42,7 @@ module.exports = function(grunt) {
                 },
                 files: [
                     {
-                        expands: true,
+                        expand: true,
                         flatten: true,
                         src: ['src/index.html'],
                         dest: 'dev/'
@@ -66,7 +64,7 @@ module.exports = function(grunt) {
                 },
                 files: [
                     {
-                        expands: true,
+                        expand: true,
                         flatten: true,
                         src: ['preBuild/index.html'],
                         dest: 'dist/'
@@ -93,8 +91,7 @@ module.exports = function(grunt) {
                 }
             }
         }
-    })
-
+    });
 
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
@@ -104,5 +101,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build', ['less:production', 'htmlmin:dist', 'replace:dist', 'clean', 'uglify']);
-}
+    grunt.registerTask('build', ['clean', 'less:production', 'htmlmin:dist', 'replace:dist', 'uglify']);
+};
+    
