@@ -1,0 +1,68 @@
+@fontMain: Roboto, sans-serif;
+@fontTitle: "Playwrite CU", cursive;
+@colorText: #feca57;
+@colorBackground: #5f27cd;
+@colorTextButton: #000;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: @colorBackground;
+    font-family: @fontMain;
+}
+
+h1{
+    font-family: @fontTitle;
+    color: @colorText;
+    font-size: 2em;
+}
+
+main {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.9em;
+    text-align: center;
+}
+
+button{
+    padding: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-top: 12px;
+    border-radius: 8px;
+    background-color: @colorText;
+    color: @colorTextButton;
+    font-family: @fontMain;
+}
+
+input {
+    display: block;
+    margin: 16px auto 0;
+    font-size: 2em;
+    max-width: 120px;
+    border: none;
+    background-color: transparent;
+    text-align: center;
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.result{
+    padding: 16px;
+    margin-top: 120px;
+    border: 8px dotted #fff;
+    color: #fff;
+    display: none;
+
+    span{
+        font-weight: bold;
+        font-size: 3em;
+        display: block;
+    }
+}
